@@ -58,6 +58,8 @@
                               <div class="text-center">
                                 <a class="small" href="{{ route('home') }}">Kembali ke Halaman Menu Utama</a>
                               </div>
+
+                              
                           </div>
                       </div>
                   </div>

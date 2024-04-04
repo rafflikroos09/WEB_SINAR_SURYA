@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 01 Des 2023 pada 14.45
+-- Waktu pembuatan: 04 Apr 2024 pada 05.36
 -- Versi server: 10.4.32-MariaDB
 -- Versi PHP: 8.2.12
 
@@ -39,7 +39,8 @@ CREATE TABLE `detail_pemesanan` (
 --
 
 INSERT INTO `detail_pemesanan` (`id_pemesanan_detail`, `id_pemesanan`, `id_menu`, `kuantitas`) VALUES
-(6, 9, 5, 4);
+(6, 9, 5, 4),
+(7, 10, 6, 1);
 
 -- --------------------------------------------------------
 
@@ -57,9 +58,8 @@ CREATE TABLE `kategori_menu` (
 --
 
 INSERT INTO `kategori_menu` (`id_kategori`, `kategori`) VALUES
-(1, 'Makanan'),
-(2, 'Sembako'),
-(3, 'Minuman');
+(1, 'Gas'),
+(2, 'Air Mineral');
 
 -- --------------------------------------------------------
 
@@ -82,9 +82,20 @@ CREATE TABLE `menu_list` (
 --
 
 INSERT INTO `menu_list` (`id_menu`, `menu`, `deskripsi`, `harga`, `id_kategori`, `img`, `status`) VALUES
-(5, 'Gas 3Kg', 'untuk orang miskin', '19000', 2, 'images/frontend/menu/ZRwrdhL3w8QtRuPA5ZFKNi08PBhJ64yHHAVQ76sJ.jpg', 0),
-(6, 'Gas 5,5 Kg', 'Gas untuk orang kaya', '90000', 2, 'images/frontend/menu/pIKtNx27YmXcIDYuz4k0lTUj6rDOxdUI2LdIdXll.jpg', 0),
-(7, 'Gas 12 Kg', 'Gas Untuk Orang Kaya Banget', '190000', 2, 'images/frontend/menu/8OCs3nVFqrn2oVyowKyuW1G5JoiZmMDBUsXIjQ9O.jpg', 0);
+(5, 'Gas 3Kg', 'Isi berat 3 Kg', '19000', 1, 'images/frontend/menu/ZRwrdhL3w8QtRuPA5ZFKNi08PBhJ64yHHAVQ76sJ.jpg', 0),
+(6, 'Gas 5,5 Kg', 'Isi Berat 5.5 Kg', '90000', 1, 'images/frontend/menu/pIKtNx27YmXcIDYuz4k0lTUj6rDOxdUI2LdIdXll.jpg', 0),
+(7, 'Gas 12 Kg', 'Isi Berat 12 Kg', '190000', 1, 'images/frontend/menu/bNEQ4dvWuPwO2Kyuwonhlv9NlCHlu8eGcCvpZsVr.jpg', 0),
+(8, 'Gas 50 Kg', 'Isi Berat 50 Kg', '950000', 1, 'images/frontend/menu/NTO5AfKCmX1w5CRXTC82Fvt1kBaYzvnWcgsUna8P.jpg', 0),
+(9, 'Aqua Galon', 'isi bersih 19 Liter', '19000', 2, 'images/frontend/menu/iL9ztzh7K7zqEv7iUx30PkghBHgQcFBmJpOZIsII.jpg', 0),
+(10, 'Lemineral Galon', 'Isi Bersih 15 Liter', '17000', 2, 'images/frontend/menu/tWq9Cejm6OHqWQkA7T2KT87gtK517E9Yf35M9Zd9.png', 0),
+(11, 'Aqua 1,5 liter', 'Isi 12 Botol', '42000', 2, 'images/frontend/menu/tg9yupb1UT42mKD5DkB1DCLP1jUij6RA9neHAs4z.jpg', 0),
+(12, 'Aqua 600ml', 'Isi 24 Botol', '36000', 2, 'images/frontend/menu/Mztwhl3BUS1sAuyNDXJmFrlGetDoLYr4pCX7UsBB.jpg', 0),
+(13, 'Aqua 330ml', 'Isi 24 Botol', '32000', 2, 'images/frontend/menu/WMa88aFxCuZUSWgpPY3AkCg0wLXJNmTR4yWf1CzW.jpg', 0),
+(14, 'Aqua Gelas', 'Isi 48 Gelas', '22000', 2, 'images/frontend/menu/kWpKkrexOpKRKEKHt79GZt64ia1pgyrdrLPl7HzX.webp', 0),
+(15, 'Lemineral 600 ml', 'Isi 24 botol', '28000', 2, 'images/frontend/menu/sAwXtJup3ygp9upk1FmA3jgfAB3iL6x9YlgPYKx0.jpg', 0),
+(16, 'Lemineral 330 ml', 'Isi 24 Botol', '24000', 2, 'images/frontend/menu/GqmeWwlqXdowkhFiHul1vV9fWBFuZpyl1Ix8Xf95.jpg', 0),
+(17, 'Vit Gelas', 'Isi 48 Gelas', '20000', 2, 'images/frontend/menu/dPWQuggKV3yKzMO9563XtbPBY19JGjS8rYWWidys.jpg', 0),
+(18, 'Sui Gelas', 'Isi 48 Botol', '17000', 2, 'images/frontend/menu/UXr9KmpLOUlPlMZ56k60haHaEWudnxEazLJaUKAe.jpg', 0);
 
 -- --------------------------------------------------------
 
@@ -133,7 +144,8 @@ INSERT INTO `pembayaran` (`id_pembayaran`, `id_pemesanan`, `total_bayar`, `tgl_p
 (3, 4, '36000', '2022-09-30 14:25:06'),
 (4, 3, '24000', '2023-01-07 14:26:22'),
 (5, 7, '24000', '2023-01-12 02:28:29'),
-(6, 9, '76000', '2023-12-01 13:22:59');
+(6, 9, '76000', '2023-12-01 13:22:59'),
+(7, 10, '90000', '2024-04-02 04:34:52');
 
 -- --------------------------------------------------------
 
@@ -161,7 +173,7 @@ INSERT INTO `pemesanan` (`id_pemesanan`, `id_pelanggan`, `tgl_pemesanan`, `id_st
 (7, 755143511, '2023-01-12 02:27:45', 6),
 (8, 755143511, '2023-01-13 08:41:06', 1),
 (9, 144843543, '2023-12-01 13:19:02', 6),
-(10, 144843543, '2023-12-01 13:26:01', 1);
+(10, 144843543, '2024-04-02 04:34:00', 6);
 
 -- --------------------------------------------------------
 
@@ -280,7 +292,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT untuk tabel `detail_pemesanan`
 --
 ALTER TABLE `detail_pemesanan`
-  MODIFY `id_pemesanan_detail` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_pemesanan_detail` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT untuk tabel `kategori_menu`
@@ -292,7 +304,7 @@ ALTER TABLE `kategori_menu`
 -- AUTO_INCREMENT untuk tabel `menu_list`
 --
 ALTER TABLE `menu_list`
-  MODIFY `id_menu` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_menu` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT untuk tabel `pelanggan`
@@ -304,7 +316,7 @@ ALTER TABLE `pelanggan`
 -- AUTO_INCREMENT untuk tabel `pembayaran`
 --
 ALTER TABLE `pembayaran`
-  MODIFY `id_pembayaran` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_pembayaran` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT untuk tabel `pemesanan`
